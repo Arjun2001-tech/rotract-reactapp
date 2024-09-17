@@ -1,0 +1,183 @@
+@import "../less/config.less";
+
+* {
+  scrollbar-color: var(--color-green-cyan) var(--light-color-tusk) !important;
+}
+
+// Chrome-specific scrollbar width
+@supports (-webkit-appearance:none) {
+  * {
+    scrollbar-width: thin;
+  }
+}
+
+// Firefox-specific scrollbar width
+@supports (-moz-appearance: none) {
+  * {
+    scrollbar-width: auto;
+  }
+}
+
+&::-webkit-scrollbar {
+  width: var(--scrollbar-width) !important;
+  height: 3px !important;
+  // background: var(--light-color-tusk) !important;
+  background: var(--light-primary-color) !important;
+}
+
+&::-webkit-scrollbar-thumb {
+  // background: var(--color-green-mist) !important;
+  background: var(--dark-zuccini) !important;
+  border-radius: 2.5px !important;
+}
+
+body {
+  font-family: @fontName !important;
+
+  h1 {
+    font-size: @fontSize30 !important;
+    font-family: @fontName !important;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: @fontSize24 !important;
+    font-family: @fontName !important;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: @fontSize20 !important;
+    font-family: @fontName !important;
+    font-weight: @bold;
+  }
+  
+  label {
+    font-size: @fontSize18 !important;
+  }
+
+  i {
+    cursor: pointer;
+  }
+
+  a {
+    color: @dark-green;
+  }
+
+  a:hover {
+    color: var(--color-green-cyan);
+  }
+
+  p[fontas = 'alpha'],
+  span[fontas = 'alpha'],
+  a[fontas = 'alpha'],
+  select[fontas = 'alpha'],
+  div[fontas = 'alpha'],
+  label[fontas = 'alpha'],
+  tbody[fontas = 'alpha'],
+  thead[fontas = 'alpha'],
+  textArea[fontas = 'alpha'],
+  button[fontas = 'alpha'],
+  text[fontas = 'alpha'] {
+    font-size: @fontSize20 !important;
+    font-weight: normal;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize20 !important;
+      font-weight: normal;
+    }
+  }
+
+  p[fontas = 'beta'],
+  span[fontas = 'beta'],
+  a[fontas = 'beta'],
+  select[fontas = 'beta'],
+  div[fontas = 'beta'],
+  label[fontas = 'beta'],
+  tbody[fontas = 'beta'],
+  thead[fontas = 'beta'],
+  button[fontas = 'beta'],
+  text[fontas = 'beta'] {
+    font-size: @fontSize18 !important;
+    font-weight: normal;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize18 !important;
+      font-weight: normal;
+    }
+  }
+
+  p[fontas = 'gamma'],
+  span[fontas = 'gamma'],
+  a[fontas = 'gamma'],
+  select[fontas = 'gamma'],
+  div[fontas = 'gamma'],
+  label[fontas = 'gamma'],
+  tbody[fontas = 'gamma'],
+  thead[fontas = 'gamma'],
+  button[fontas = 'gamma'],
+  text[fontas = 'gamma'] {
+    font-size: @fontSize16 !important;
+    font-weight: normal;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize16 !important;
+      font-weight: normal;
+    }
+  }
+
+  p[fontas = 'alpha header'],
+  span[fontas = 'alpha header'],
+  a[fontas = 'alpha header'],
+  select[fontas = 'alpha header'],
+  div[fontas = 'alpha header'],
+  label[fontas = 'alpha header'],
+  tbody[fontas = 'alpha header'],
+  thead[fontas = 'alpha header'],
+  button[fontas = 'alpha header'] {
+    font-size: @fontSize30 !important;
+    font-weight: 500;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize30 !important;
+      font-weight: 500;
+    }
+  }
+  
+  p[fontas = 'beta header'],
+  span[fontas = 'beta header'],
+  a[fontas = 'beta header'],
+  select[fontas = 'beta header'],
+  div[fontas = 'beta header'],
+  label[fontas = 'beta header'],
+  tbody[fontas = 'beta header'],
+  thead[fontas = 'beta header'],
+  input[fontas = 'beta header'],
+  button[fontas = 'beta header'] {
+    font-size: @fontSize24 !important;
+    font-weight: 500;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize24 !important;
+      font-weight: 500;
+    }
+  }
+  
+  p[fontas = 'gamma header'],
+  span[fontas = 'gamma header'],
+  a[fontas = 'gamma header'],
+  select[fontas = 'gamma header'],
+  div[fontas = 'gamma header'],
+  label[fontas = 'gamma header'],
+  tbody[fontas = 'gamma header'],
+  thead[fontas = 'gamma header'],
+  button[fontas = 'gamma header'] {
+    font-size: @fontSize20 !important;
+    font-weight: 500;
+
+    a,div,input,span,tr,ul,option {
+      font-size: @fontSize20 !important;
+      font-weight: 500;
+    }
+  }
+}

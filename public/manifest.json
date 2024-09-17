@@ -3,17 +3,17 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://styles.redditmedia.com/t5_2sh8v/styles/communityIcon_s6nj0wf0cnc41.png?width=256&s=c43b1a990851cdc216d98ac4e1751a5fc04d2a12",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://styles.redditmedia.com/t5_2sh8v/styles/communityIcon_s6nj0wf0cnc41.png?width=256&s=c43b1a990851cdc216d98ac4e1751a5fc04d2a12",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://styles.redditmedia.com/t5_2sh8v/styles/communityIcon_s6nj0wf0cnc41.png?width=256&s=c43b1a990851cdc216d98ac4e1751a5fc04d2a12",
       "type": "image/png",
       "sizes": "512x512"
     }

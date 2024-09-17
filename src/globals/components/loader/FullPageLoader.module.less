@@ -1,0 +1,52 @@
+@import "../../../assets/less/config.less";
+
+.df_loading_grid {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+}
+
+.df_loading_grid div {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  left: 10px;
+  background: @tusk;
+  // animation: df_loading_grid 1.2s linear infinite;
+}
+
+.df_loading_grid div:nth-child(2) {
+  animation: df_loading_grid_horizontal 1s ease-in-out infinite;
+}
+
+.df_loading_grid div:nth-child(3) {
+  animation: df_loading_grid_vertical 1s ease-in-out infinite;
+}
+
+.df_loading_grid div:nth-child(4) {
+  animation: df_loading_grid_horizontal 1s ease-in-out infinite, df_loading_grid_vertical 1s ease-in-out infinite;
+}
+
+@keyframes df_loading_grid_horizontal {
+  0%, 100% {
+    top: 10px;
+  }
+
+  75% {
+    top: 50px;
+  }
+}
+
+@keyframes df_loading_grid_vertical {
+  0%, 100% {
+    left: 10px;
+  }
+
+  75% {
+    left: 50px;
+  }
+}

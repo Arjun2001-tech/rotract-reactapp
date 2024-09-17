@@ -1,0 +1,132 @@
+.LoginPage {
+  /* padding: 3%; */
+  padding: 0 3%;
+
+  >div:first-child {
+    >div:last-child {
+      >div {
+        background: #d63384;
+        padding: 2%;
+        border-radius: 15px;
+        color: white;
+
+        /* margin-top: 18%; */
+        /* margin: 18% 0%; */
+        .login {
+          >h2 {
+            text-align: center;
+            font-family: fangsong;
+          }
+
+          >form {
+            >div {
+              >label {
+                color: white;
+              }
+            }
+
+            >div:last-child {
+              justify-content: space-around;
+              display: flex;
+              padding-top: 1%;
+
+              >button {
+                background: #17458f;
+                color: white;
+                width: 20%;
+              }
+            }
+          }
+        }
+
+        .SignIn {
+          >h2 {
+            text-align: center;
+            font-family: fangsong;
+          }
+
+          >form {
+            height: 511px;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            >div {
+              >div {
+                width: 50%;
+
+                >label {
+                  color: white;
+                }
+
+                >div {
+                  border: 2px solid black;
+                  border-radius: 6px;
+                }
+
+                >div[class="ui pointing above prompt label"] {
+                  margin-top: 3px;
+                }
+
+              }
+            }
+
+            .mobileInput {
+              >div:first-child {
+                padding-right: 0px;
+                width: 61%;
+                color: black;
+
+                >div[class=" react-tel-input "] {
+                  /* border: 2px solid black; */
+                  border-radius: inherit;
+
+                  input[class="form-control "] {
+                    padding-left: 3em !important;
+                  }
+
+                  input[class="form-control open "] {
+                    padding-left: 3em !important;
+                  }
+
+                  >input {
+                    border-radius: inherit;
+                  }
+                }
+
+                >label {
+                  color: white;
+                }
+              }
+
+              >button {
+                width: min-content;
+                height: min-content;
+                margin-top: 4.8%;
+                padding-top: 6px;
+                border: 2px solid black;
+                padding-bottom: 6px;
+                border-radius: inherit;
+                background: #17458f;
+                color: white;
+              }
+
+              >div:last-child {
+                width: 25%;
+              }
+            }
+
+            >div:last-child {
+              display: flex;
+              justify-content: space-between;
+
+              >button {
+                background: #17458f;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
