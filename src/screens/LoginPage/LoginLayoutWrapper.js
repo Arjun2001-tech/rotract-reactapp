@@ -13,7 +13,7 @@ const LoginLayoutWrapper = (props) => {
           <Image src="https://1.bp.blogspot.com/-fP8qAlCEaoU/VpA0DWeYFGI/AAAAAAAAAPY/psYivf9TwrM/s1600/New-Rotaract.png" />
         </GridColumn>
         <GridColumn computer={7} tablet={8} mobile={16}>
-          <div>
+          <div data-aos="flip-right">
             {children}
           </div>
         </GridColumn>

@@ -4,24 +4,16 @@ import { Card } from 'semantic-ui-react';
 import memberData from "./Members.json"
 import '../RegionClubs.css';
 
-const Members = () => {
+const Event = () => {
 
   return (
     <div className='ClubMembers'>
-      <h1>Members</h1>
-      <div
-        data-aos="flip-left"
-        data-aos-duration="1000"
-      >
+      <h1>Event</h1>
+      <div>
         {(memberData.members_data.map((data, i) => (
-          <Card
-            fluid
-            key={i}
-            // data-aos="flip-left"
-            // data-aos-duration="1000"
-          >
+          <Card fluid key={i}>
             <Card.Content>
-              <p data-fontas="alpha">Name: <span>{data.name}</span></p>
+              <p>Name: <span>{data.name}</span></p>
               <p>Blood Group: <span>{data.blood_group}</span></p>
             </Card.Content>
           </Card>
@@ -30,4 +22,4 @@ const Members = () => {
     </div>
   );
 };
-export default withTranslation('common')(Members);
+export default withTranslation('common')(Event);

@@ -21,7 +21,7 @@ const ForgetPassword = () => {
 
   return (
     <LoginLayoutWrapper>
-      <div className='ForgetPassword'>
+      <div className='forgetPassword'>
         <h2>Forget Password</h2>
         <RotaractFromik
           initialValues={{

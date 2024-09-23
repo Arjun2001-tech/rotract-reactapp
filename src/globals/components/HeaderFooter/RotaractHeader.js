@@ -8,13 +8,13 @@ import './RotaractHeaderAndFooter.css';
 
 const RotaractHeader = (props) => {
   const { t } = props
-  const menuTabs = ['home', 'about', 'clubs'];
+  const menuTabs = ['home', 'about', 'clubs', 'admin'];
 
   const history = useHistory();
 
   return (
     <>
-      <div className="header">
+      <div className="rotaract_header">
         <div>
           <Image
             src="https://www.nicepng.com/png/full/380-3802815_rotaract-logo-png.png"
@@ -46,6 +46,7 @@ const RotaractHeader = (props) => {
                 key={tab}
               >
                 {t(tab)}
+                {history.location.pathname.includes(tab) && <div />}
               </div>
             )))}
           </div>

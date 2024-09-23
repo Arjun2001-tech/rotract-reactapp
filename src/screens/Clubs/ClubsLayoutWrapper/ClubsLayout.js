@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Grid, Icon, Popup } from 'semantic-ui-react';
-import ClubsSideNav from './ClubsSideNav';
 import Members from './Members';
 import '../RegionClubs.css';
+import ClubsHome from './ClubsHome';
+import Event from './Event';
 // import styles from './BatchInfolayout.module.less';
 
 const ClubsLayout = (props) => {
@@ -20,9 +21,9 @@ const ClubsLayout = (props) => {
   let Component = null;
 
   const compobj = {
-    clubs_home: Members,
+    clubs_home: ClubsHome,
     members: Members,
-    event: Members,
+    event: Event,
   };
 
   Component = compobj[activeTab];
@@ -33,18 +34,6 @@ const ClubsLayout = (props) => {
         <Grid.Column computer={1} tablet={4} mobile={1}>
           <div>
             {(menuTabs.map((tab, i) => (
-              // <div
-              //   // fontas="alpha"
-              //   className={menuTabs[i] === activeTab ? "Batch" : ''}
-              //   onClick={() => setActiveTab(tab)}
-              //   role="button"
-              //   tabIndex={i + 1}
-              //   onKeyDown={null}
-              //   key={tab}
-              // >
-              //   {t(tab)}
-              //   {tab === activeTab && <div />}
-              // </div>
               <Popup
                 key={tab}
                 basic
@@ -54,8 +43,7 @@ const ClubsLayout = (props) => {
                     name={iconNames[tab]}
                     size="big"
                     inverted={activeTab === tab}
-                    // className={activeTab === tab ? styles.activeTabIcon : ''}
-                    className={menuTabs[i] === activeTab ? "Batch" : ''}
+                    className={menuTabs[i] === activeTab ? "activeTabIcon" : ''}
                     onClick={() => setActiveTab(tab)}
                   />
                 )}
@@ -65,13 +53,7 @@ const ClubsLayout = (props) => {
         </Grid.Column>
         <Grid.Column computer={15} tablet={12} mobile={15}>
           {
-            // (Component && !isLoading) ? (
-            <Component
-            // batch_id={batch_id}
-            // stream_id={stream_id}
-            // setActiveTab={setActiveTab}
-            />
-            // ) : <DefaultLoader />
+            <Component />
           }
         </Grid.Column>
       </Grid>
