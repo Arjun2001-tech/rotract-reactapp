@@ -1,0 +1,8 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.dimmer {
+  background-color: rgba(0.4, 10.6, 6.3,.80) !important;
+  perspective: none !important;
+}

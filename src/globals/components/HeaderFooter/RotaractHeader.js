@@ -1,24 +1,23 @@
-import React from "react";
+import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Image } from "semantic-ui-react";
-import { useHistory } from "react-router-dom";
-import './RotaractHeaderAndFooter.css';
-// import logo from "../../assets/Images/rotary-district-3000-logo.svg"
-
+import { Image } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom';
+import styles from './HeaderAndFooter.module.less';
+// import logo from '../../assets/Images/rotary-district-3000-logo.svg'
 
 const RotaractHeader = (props) => {
-  const { t } = props
+  const { t } = props;
   const menuTabs = ['home', 'about', 'clubs', 'admin'];
 
   const history = useHistory();
 
   return (
     <>
-      <div className="rotaract_header">
+      <div className={styles.rotaract_header}>
         <div>
           <Image
             src="https://www.nicepng.com/png/full/380-3802815_rotaract-logo-png.png"
-          // onClick={() => handleNavigation("/")}
+          // onClick={() => handleNavigation('/')}
           />
           <div>
             <h2>ROTARACT DISTRICT ORGANISATION 2024-25</h2>
@@ -26,18 +25,15 @@ const RotaractHeader = (props) => {
           </div>
           <Image
             src="https://www.nicepng.com/png/full/380-3802815_rotaract-logo-png.png"
-          // onClick={() => handleNavigation("/")}
+          // onClick={() => handleNavigation('/')}
           />
         </div>
-        <div className="nav_header"
-        // data-aos="fade-down"
-        // data-aos-duration="1000"
-        >
+        <div className={styles.nav_header}>
           <div>
             {(menuTabs.map((tab, i) => (
               <div
-                // fontas="alpha"
-                className={history.location.pathname.includes(tab) ? "activeTab" : ''}
+                // fontas='alpha'
+                className={history.location.pathname.includes(tab) ? 'activeTab' : ''}
                 // onClick={() => handleNavigation(tab)}
                 onClick={() => history.push(tab)}
                 role="button"
@@ -54,6 +50,6 @@ const RotaractHeader = (props) => {
       </div>
     </>
   );
-}
+};
 
 export default withTranslation('common')(RotaractHeader);

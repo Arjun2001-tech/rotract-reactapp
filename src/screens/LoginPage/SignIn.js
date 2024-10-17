@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import {
-  Button,
-  Form, FormGroup, Input,
-  Select
+  Button, Form, FormGroup, Input, Select,
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
-import RotaractFromik from '../../globals/components/rotaractfromik/RotaractFromik';
+import RotaractFromik from '@globalComps/rotaractfromik/RotaractFromik';
 // import md5 from 'md5';
 import * as yup from 'yup';
-import './Login.css';
 import PhoneInput from 'react-phone-input-2';
 import LoginLayoutWrapper from './LoginLayoutWrapper';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
+import styles from './Login.module.less';
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
   { key: 'f', text: 'Female', value: 'female' },
   { key: 'o', text: 'Other', value: 'other' },
-]
+];
 
 const bloodGroup = [
   { key: 'a+', text: 'A+', value: 'A+' },
@@ -29,7 +27,7 @@ const bloodGroup = [
   { key: 'ab-', text: 'AB-', value: 'AB-' },
   { key: 'o+', text: 'O+', value: 'O+' },
   { key: 'o-', text: 'O-', value: 'O-' },
-]
+];
 
 const regionOptions = [
   { key: 'a', text: 'Aranthangi', value: 'aranthangi' },
@@ -37,10 +35,11 @@ const regionOptions = [
   { key: 'm', text: 'Madurai', value: 'madurai' },
   { key: 'th', text: 'Thanjavur', value: 'thanjavur' },
   { key: 'ti', text: 'Tircuhiappalli', value: 'tircuhiappalli' },
-]
+];
 
 const SignIn = (props) => {
-  const { t } = props
+  const { t } = props;
+  const [maxPhoneNumberLength, setMaxPhoneNumberLength] = useState(null);
 
   const history = useHistory();
 
@@ -51,7 +50,7 @@ const SignIn = (props) => {
       .matches(/^[A-Za-z\s]+$/, {
         message: (t('name_should_only_contain_letters')),
       })
-      .required(t("firstname_is_required")),
+      .required(t('firstname_is_required')),
     email: yup.string().email(('please_enter_the_valid_email')).required(`${('email')} ${('required')}`),
     password: yup.string().when('input_file_content', {
       is: (value) => !value,
@@ -80,15 +79,13 @@ const SignIn = (props) => {
       }),
   });
 
-  const [maxPhoneNumberLength, setMaxPhoneNumberLength] = useState(null);
-
   const loginsubmit = (values) => {
-    console.log(values, "values");
+    console.log(values, 'values');
   };
 
   return (
     <LoginLayoutWrapper>
-      <div className='SignIn'>
+      <div className={styles.SignIn}>
         <h2>Sign In</h2>
         <RotaractFromik
           initialValues={{
@@ -179,7 +176,7 @@ const SignIn = (props) => {
                     control={Select}
                     options={genderOptions}
                     label="Gender *"
-                    placeholder='Gender'
+                    placeholder="Gender"
                     search
                     value={values.gender}
                     name="gender"
@@ -191,7 +188,7 @@ const SignIn = (props) => {
                     control={Select}
                     options={bloodGroup}
                     label="Blood Group *"
-                    placeholder='Blood Group'
+                    placeholder="Blood Group"
                     search
                     value={values.blood_group}
                     name="blood_group"
@@ -205,7 +202,7 @@ const SignIn = (props) => {
                     control={Select}
                     options={regionOptions}
                     label="Region *"
-                    placeholder='Region'
+                    placeholder="Region"
                     search
                     value={values.region}
                     name="region"
@@ -249,7 +246,7 @@ const SignIn = (props) => {
                     error={touched.confirm_password && errors.confirm_password}
                   />
                 </FormGroup>
-                <FormGroup className="mobileInput">
+                <FormGroup className={styles.mobileInput}>
                   <Form.Field
                     label="Mobile Number *"
                     control={PhoneInput}
@@ -266,7 +263,7 @@ const SignIn = (props) => {
                     value={values.mobile_number}
                     error={touched.mobile_number && errors.mobile_number}
                   />
-                  <Button size='tiny' type="button">Send Otp</Button>
+                  <Button size="tiny" type="button">Send Otp</Button>
                   <Form.Field
                     name="otp"
                     control={Input}
@@ -282,7 +279,7 @@ const SignIn = (props) => {
                 </FormGroup>
                 {/* <Link to="/" fontas="beta">Login</Link> */}
                 <div>
-                  <Button type="button" onClick={() => history.push("/")}>Back To Login</Button>
+                  <Button type="button" onClick={() => history.push('/')}>Back To Login</Button>
                   <Button type="submit">Register</Button>
                 </div>
               </Form>
@@ -292,6 +289,6 @@ const SignIn = (props) => {
       </div>
     </LoginLayoutWrapper>
   );
-}
+};
 
 export default withTranslation('common')(SignIn);

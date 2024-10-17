@@ -1,0 +1,21 @@
+@import "~assets/less/config";
+
+.toggleWrapper {
+
+  .ui.toggle.checkbox input:checked~.box::before,
+  .ui.toggle.checkbox input:checked~label::before {
+    background-color: var(--color-tusk) !important;
+  }
+
+  .ui.label:first-child {
+    background-color: white;
+  }
+}
+
+.toggleWrapper {
+
+  .ui.toggle.checkbox input:checked~.box::before,
+  .ui.toggle.checkbox input:checked~label::after {
+    background-color: var(--color-dark-green) !important;
+  }
+}

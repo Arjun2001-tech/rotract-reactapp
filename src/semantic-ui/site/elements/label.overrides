@@ -1,0 +1,11 @@
+/*******************************
+         Site Overrides
+*******************************/
+@import "~assets/less/config";
+
+
+.ui.form .field > label {
+    font-size: var(--font-size-24);
+    font-family: var(--font-name);
+    font-weight: 400;
+}

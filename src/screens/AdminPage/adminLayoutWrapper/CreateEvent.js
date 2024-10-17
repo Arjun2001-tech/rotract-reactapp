@@ -4,7 +4,7 @@ import RotaractFromik from '../../../globals/components/rotaractfromik/RotaractF
 import { Button, Form, Grid, Input, Label } from 'semantic-ui-react';
 import CKEditor from 'ckeditor4-react';
 import DatePicker from 'react-datepicker';
-import styles from '../AdminPage.module.scss';
+import styles from '../AdminPage.module.less';
 
 const CreateEvent = (props) => {
   const { t } = props;

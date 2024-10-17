@@ -51,6 +51,16 @@
 
     #root>*:not(.divLoader):not(#defaultLoader):not(#fullPageLoader) {
       animation: fadeIn 0.5s ease-in-out;
+
+      >div:first-child {
+        position: fixed;
+        top: 0%;
+        z-index: 1;
+      }
+
+      >div:last-child {
+        padding-top: 10.5%;
+      }
     }
 
     @keyframes fadeIn {
@@ -90,4 +100,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+
 </html>

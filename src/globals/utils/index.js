@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import Cookies from 'js-cookie';
-import UserInfo from '../../models/UserInfo';
-import GlobalService from '../../services/GlobalService';
-import { resturls } from './apiurls';
-import { cookiedomain } from './constants';
-import { Route, Redirect } from 'react-router-dom';
 import React from 'react';
+import Cookies from 'js-cookie';
+import UserInfo from '@models/UserInfo';
+import { Route, Redirect } from 'react-router-dom';
 import ls from 'local-storage';
+import { cookiedomain } from './constants';
 
 function parseJwt(token) {
   console.log('token', token);
@@ -33,6 +31,7 @@ function updateUserInfo(c1 = null) {
   let val1 = c1;
   console.log(cookiedomain);
   const ck = Cookies.get('_c1', { domain: cookiedomain });
+  // const expmin = new Date(new Date().getTime() + 20 * 60 * 1000);
 
   if (ck != null) {
     val1 = ck;
@@ -58,6 +57,7 @@ function updateUserInfo(c1 = null) {
 
         cookieObj.expiry = Math.floor(now.getTime() / 1000) + cookie.max_age;
         ls.set('_c1', cookieObj);
+        // Cookies.set('_c1', val1, { path: '/', expires: expmin, domain: cookiedomain });
       } else {
         ls.remove('_c1');
         window.localStorage.setItem('isEventClosed', '');
@@ -89,45 +89,6 @@ function clearCookies() {
   window.localStorage.setItem('authAmphiSessionId', undefined);
 }
 
-function processLogout(redirectToLogin = true) {
-  console.log('Logout process');
-  const obj = {};
-  GlobalService.generalSelect(
-    (respdata) => {
-      const { estatus, emessage, data } = respdata;
-      console.log(estatus, emessage, data);
-      if (estatus && emessage) {
-        if (data.status === 'logged out') {
-          let ck = Cookies.get('_c1', { domain: cookiedomain });
-          console.log('before logout ck', ck, cookiedomain);
-          Cookies.remove('_c1', { domain: cookiedomain });
-          ls.remove('schoolId');
-          ls.remove('schoolName');
-          ck = Cookies.get('_c1', { domain: cookiedomain });
-          console.log('after logout ck', ck, cookiedomain);
-          ls.remove('_c1');
-          ls.remove('institutionId');
-          ls.remove('domain');
-          ls.remove('activePrgmScreen');
-          ls.remove('roleDetailsMap');
-          ls.remove('defaultRedirection');
-          document.cookie = '_c1=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-          if (redirectToLogin) {
-            document.location.href = '/login';
-          }
-          UserInfo.clear();
-          window.localStorage.setItem('isEventClosed', '');
-          window.localStorage.setItem('authAmphiSessionId', undefined);
-          if (window.ReactNativeWebView) {
-            window.ReactNativeWebView.postMessage('loggedOut');
-            window.ReactNativeWebView.postMessage('loggedOut');
-          }
-        }
-      }
-    }, resturls.logout, obj, 'POST',
-  );
-}
-
 function PrivateRoute({ component: Component, cprops, ...rest }) {
   const valid = UserInfo.getRole();
 
@@ -150,37 +111,6 @@ function PrivateRoute({ component: Component, cprops, ...rest }) {
   );
 }
 
-function updateFavIcon() {
-  const favicon = document.getElementById('favicon');
-  const bodyTagEle = document.getElementsByTagName('body')[0];
-  GlobalService.generalSelect(
-    (respdata) => {
-      const {
-        estatus,
-        emessage,
-        data: {
-          faviconLink, titleContent, roleDetailsMap, defaultRedirection,
-          domainTheme, isTrank,
-        },
-      } = respdata;
-      favicon.href = `${favicon.href}/favicon.png`;
-      document.title = 'E-Box App | We Revolutionize Technology and Engineering Learning';
-      if (estatus === true && emessage === 'success') {
-        if (faviconLink !== '') {
-          favicon.href = faviconLink;
-          document.title = titleContent;
-        }
-        ls.set('roleDetailsMap', roleDetailsMap);
-        ls.set('defaultRedirection', defaultRedirection);
-        ls.set('isTrank', isTrank);
-        if (domainTheme !== null && domainTheme !== undefined && domainTheme.length > 0) {
-          bodyTagEle.classList.add(domainTheme);
-        }
-      }
-    }, resturls.obtainFavIconAndTitle,
-  );
-}
-
 export {
-  parseJwt, updateC1, updateUserInfo, PrivateRoute, processLogout, clearCookies, updateFavIcon,
+  parseJwt, updateC1, updateUserInfo, PrivateRoute, clearCookies,
 };

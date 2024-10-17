@@ -1,0 +1,57 @@
+/*******************************
+        User Overrides
+*******************************/
+@import "~assets/less/config";
+
+.ui.dropdown {
+  margin: 0;
+}
+
+.ui.selection.dropdown,
+.ui.upward.selection.dropdown .menu,
+.ui.selection.active.dropdown .menu,
+.ui.dropdown {
+  border-color: @grayColor4;
+  font-family: @fontName;
+  color: @bodyTextColour;
+}
+
+.ui.selection.active.dropdown {
+  border-color: @grayColor4;
+}
+
+.ui.selection.active.dropdown .menu {
+  border-top-width: 0px !important;
+  border-bottom-width: 1px !important;
+}
+
+.ui.upward.selection.dropdown .menu {
+  border-bottom-width: 0px !important;
+  border-top-width: 1px !important;
+}
+
+.ui.dropdown .menu > .item {
+  font-family: @fontName;
+  color: @bodyTextColour;
+}
+
+.ui.multiple.dropdown {
+  >.ui.label {
+    background-color: @white;
+    color: @headerTextColour;
+    font-weight: 400;
+    border-radius: 24px;
+    display: inline-flex;
+
+    i::before {
+      border: 1px solid @bodyTextColour;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      transform: translateY(-2px);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

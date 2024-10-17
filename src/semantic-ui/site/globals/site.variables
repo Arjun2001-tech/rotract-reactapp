@@ -1,0 +1,110 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@grayColor1:#333333;
+@grayColor2:#4d4d4d;
+@grayColor3:#808080;
+@grayColor4:#c7c7c7;
+@grayColor5:#d6d6d6;
+@grayColor6:#f8f8f8;
+
+@layoutPadding:30px;
+@layoutPaddingTablet:15px;
+@layoutPaddingMobile:0;
+@borderRadius:2px;
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Public Sans';
+@googleFontName    : 'Public Sans';
+
+@headerFont        : @fontName, Arial, Helvetica, sans-serif;
+@pageFont          : @fontName, Arial, Helvetica, sans-serif;
+
+@googleFontSizes   : '400,700,900,400italic,700italic,900italic';
+
+@black             : #222831;;
+@bold              : bold;
+@normal            : normal;
+
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emSize   : 14px;
+
+/* The size of page text  */
+@fontSize    : 14px;
+
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor        : #00AB55;
+@secondaryColor      : #FFB240;
+
+@lightPrimaryColor   : #00EF77;
+@lightSecondaryColor : #FFC166;
+
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight : @bold;
+@headerLineHeight : unit((18 / 14), em);
+
+@h1 : unit((22 / 14), rem);
+@h2 : unit((20 / 14), rem);
+@h3 : unit((18 / 14), rem);
+@h4 : unit((16 / 14), rem);
+@h5 : unit((14 / 14), rem);
+@h6 : unit((12 / 14), rem);
+
+/*-------------------
+        Page
+--------------------*/
+
+@pageBackground      : #FFFFFF;
+
+@lineHeight          : 1.4285em;
+@textColor           : rgba(0, 0, 0, 0.87);
+
+/*-------------------
+      Paragraph
+--------------------*/
+
+@paragraphMargin     : 0em 0em 1em;
+@paragraphLineHeight : @lineHeight;
+
+/*-------------------
+       Links
+--------------------*/
+
+@linkColor           : @primaryColor;
+@linkUnderline       : none;
+@linkHoverColor      : var(--link-hover-color);
+@linkHoverUnderline  : @linkUnderline;
+
+/*-------------------
+  Highlighted Text
+--------------------*/
+
+@highlightBackground      : #CCE2FF;
+@highlightColor           : @textColor;
+
+@inputHighlightBackground : rgba(100, 100, 100, 0.4);
+@inputHighlightColor      : @textColor;
+
+/*-------------------
+     Transitions
+--------------------*/
+
+@defaultDuration : 0.1s;
+@defaultEasing   : ease;

@@ -1,17 +1,16 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import {
-  Button, Form, Input
+  Button, Form, Input,
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import * as yup from 'yup';
 import RotaractFromik from '../../globals/components/rotaractfromik/RotaractFromik';
 // import md5 from 'md5';
-import * as yup from 'yup';
-import './Login.css';
 import LoginLayoutWrapper from './LoginLayoutWrapper';
+import styles from './Login.module.less';
 
 const ForgetPassword = () => {
-
   const history = useHistory();
 
   const SignupSchema = yup.object().shape({
@@ -21,7 +20,7 @@ const ForgetPassword = () => {
 
   return (
     <LoginLayoutWrapper>
-      <div className='forgetPassword'>
+      <div className={styles.forgetPassword}>
         <h2>Forget Password</h2>
         <RotaractFromik
           initialValues={{
@@ -75,7 +74,7 @@ const ForgetPassword = () => {
               />
               {/* <Link to="/forgetpassword" fontas="beta">Forgot Password?</Link> */}
               <div>
-                <Button type="submit" onClick={() => history.push("/")}>Back To Login</Button>
+                <Button type="submit" onClick={() => history.push('/')}>Back To Login</Button>
                 <Button type="submit">Register</Button>
               </div>
             </Form>
@@ -84,6 +83,6 @@ const ForgetPassword = () => {
       </div>
     </LoginLayoutWrapper>
   );
-}
+};
 
 export default withTranslation('common')(ForgetPassword);

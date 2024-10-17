@@ -13,9 +13,14 @@ const Common = {
   event_name: 'Event Name',
   description: 'Description',
   logo: 'Logo',
-  chartet_date: 'Chartet Date',
   choose_file: 'Choose File',
   no_file_choosen: 'No File Choosen',
+  club_name: 'Club Name',
+  club_id: 'Club Id',
+  email: 'Email',
+  chartet_date: 'Chartet Date',
+  president_name: 'President Name',
+  secretary_name: 'Secretary Name',
 
 };
 export default Common;

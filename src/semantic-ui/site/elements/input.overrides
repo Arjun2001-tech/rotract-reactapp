@@ -1,0 +1,29 @@
+/*******************************
+         Site Overrides
+*******************************/
+@import "~assets/less/config";
+
+.ui.form .field .ui.input,
+.ui.input {
+  >input {
+    font-size: var(--font-size-18);
+    font-family: @fontName;
+    border-radius: .3em;
+    border: 1px solid @grayColor4 !important;
+
+    &:focus {
+      border-color: @primaryGreenBase !important;
+      border-width: 2px !important;
+    }
+  }
+}
+
+.ui.form .error.field input,
+.ui.error.input>input {
+  border-color: @errorColourBase !important;
+
+  &:focus {
+    border-color: @errorColourBase !important;
+    border-width: 2px !important;
+  }
+}

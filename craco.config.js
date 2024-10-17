@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const semanticUi = require('@semantic-ui-react/craco-less');
 const path = require('path');
 require('dotenv').config();
@@ -34,12 +35,12 @@ module.exports = {
           maxInitialRequests: Infinity,
           cacheGroups: {
             jovomodule: {
-              test: /[\\/]node_modules[\\/](@rotaract)[\\/]/,
+              test: /[\\/]node_modules[\\/](@rotaract3000)[\\/]/,
               name: 'rotaractmodules',
               priority: 1,
             },
             vendor: {
-              test: /[\\/]node_modules[\\/]((?!(@rotaract)).*)[\\/]/,
+              test: /[\\/]node_modules[\\/]((?!(@rotaract3000)).*)[\\/]/,
               name: 'npm_bundle',
               reuseExistingChunk: true,
             },
@@ -55,7 +56,7 @@ module.exports = {
         rules: [
           {
             test: /\.(module)\.(less)$/,
-            exclude: /node_modules\/(?!(@rotaract)\/).*/,
+            exclude: /node_modules\/(?!(@rotaract3000)\/).*/,
             use: [
               {
                 loader: 'style-loader',

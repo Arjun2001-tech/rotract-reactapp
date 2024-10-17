@@ -1,8 +1,0 @@
-// @import "../less/config.less";
-@import "./config";
-
-.toggleWrapper {
-  .ui.toggle.checkbox input:checked ~ .box::before, .ui.toggle.checkbox input:checked ~ label::before {
-    background-color: var(--color-tusk) !important;
-  }
-}
