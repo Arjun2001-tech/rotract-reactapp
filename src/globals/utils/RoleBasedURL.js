@@ -1,5 +1,5 @@
 const roleUrl = {
-  'Recruiter Head': '/recruiter/assessment',
+  admin: '/programmanager/home',
   'Program manager': '/programmanager',
 };
 

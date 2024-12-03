@@ -1,0 +1,150 @@
+.region_Clubs {
+    padding: 2%;
+
+    >div:nth-child(2) {
+        >div {
+            >div {
+                cursor: pointer;
+
+                >div:first-child {
+                    background: var(--rotaract-color-Fuchsia);
+                    color: var(--color-white);
+                    padding: 0.5em 1.5em;
+                    font-size: 20px;
+                }
+
+                >div:nth-child(2) {
+                    >div {
+                        >div:last-child {
+                            >p {
+                                font-size: 16px;
+                                color: var(--color-scale-gray-3);
+
+                                >p {
+                                    padding-left: 13%;
+                                    color: var(--windows-selected-border);
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.clubsLayout {
+    padding: 1.1%;
+    background-image: url("https://www.rotary.org/sites/default/files/styles/w_700/public/home-concrete-background.jpg");
+    /* height: 468px; */
+
+    >div {
+        >div:first-child {
+            box-shadow: 1px 4px 10px var(--shadow-black);
+
+            >div {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center;
+                gap: 2em;
+                padding-top: 1em;
+                /* min-height: 65.3vh; */
+
+                >i {
+                    cursor: pointer;
+                }
+
+                .activeTabIcon {
+                    background-color: var(--color-dark-green) !important;
+                    height: max-content;
+                    width: max-content;
+                    padding: 3px;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        >div:last-child {
+            /* height: 72.6vh; */
+            height: 482px;
+            overflow-y: auto;
+            padding: 2% !important;
+        }
+
+    }
+}
+
+.clubs_home {
+    >h1 {
+        color: var(--clock-chimes-thirteen)
+    }
+
+    >div:nth-child(2) {
+        padding: 0 20%;
+        /* font-size: 18px; */
+
+        >div {
+            background: none;
+            box-shadow: 1px 4px 10px var(--shadow-black);
+
+            >div {
+                >div {
+                    >div:first-child {
+                        font-family: 'Icons';
+                        color: var(--code-fillups-text-color);
+                    }
+
+                    >div:last-child {
+                        /* font-weight: 500; */
+                        color: var(--color-zuccini);
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.ClubMembers {
+    /* padding: 2%; */
+
+    >h1:first-child {
+        color: var(--clock-chimes-thirteen);
+    }
+
+    >div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1%;
+
+        >div {
+            background-color: var(--border-color) !important;
+            /* color: black; */
+            font-size: larger;
+
+            >div {
+                >p {
+                    >span {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        >div:first-child {
+            margin-top: 14px !important;
+        }
+
+        >div:last-child {
+            margin-bottom: 14px !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        >div {
+            grid-template-columns: repeat(1, 1fr);
+            /* Single column layout on mobile */
+        }
+    }
+}

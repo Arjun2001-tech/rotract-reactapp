@@ -1,0 +1,53 @@
+/*******************************
+         Site Overrides
+*******************************/
+@import "~assets/less/config";
+
+.ui.checkbox {
+  > label {
+    color: @bodyTextColour !important;
+
+    &::before {
+      border-width: 2px;
+      border-color: @neutralColourBase !important;
+    }
+
+    &::after {
+      background-color: @primaryGreenBase !important;
+      color: @white !important;
+      border-radius: 0.21428571rem;
+      font-size: var(--font-size-18);
+    }
+  }
+}
+
+.ui.checked.radio.checkbox > label::before {
+    border-color: @primaryGreenBase !important;
+}
+
+
+.ui.checked.disabled.radio.checkbox>label {
+    &::before {
+        border-color: @neutralColourBase !important;
+    }
+    
+    &::after {
+        background-color: @neutralColourBase !important;
+    }
+}
+
+.ui.checked.fitted.toggle.checkbox {
+    label::after {
+        background-color: var(--color-dark-green);
+    }
+}
+
+.ui.fitted.toggle.checkbox {
+    label::after {
+        background-color: var(--color-scale-gray-6);
+    }
+
+    label::before {
+        background-color: var(--color-scale-gray-7);
+    }
+}

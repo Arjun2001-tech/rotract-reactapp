@@ -1,5 +1,6 @@
 :root {
   /* Colors */
+  --rotaract-color-Fuchsia: #d63384;
   --light-zuccini:#4E7C5B;
   --color-orange: #f94908;
   --color-medium-dark-shade-gray: #505050;
@@ -261,10 +262,6 @@
     }
   }
   --attempt-raise-doubts-btn-position: 38px;
-}
-
-.attempt-theme {
-  --scrollbar-width: 3px;
 }
 
 @media only screen and (max-width: 1366px) {

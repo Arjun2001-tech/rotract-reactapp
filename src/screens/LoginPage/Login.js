@@ -1,17 +1,23 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import {
-  Button, Form,  Input
+  Button, Form, Input,
 } from 'semantic-ui-react';
 import { Link, useHistory } from 'react-router-dom';
-import RotaractFromik from '../../globals/components/rotaractfromik/RotaractFromik';
+import { resturls } from '@utils/apiurls';
+import GlobalService from '@services/GlobalService';
+// import UserInfo from '@models/UserInfo';
 // import md5 from 'md5';
 import * as yup from 'yup';
-import './Login.css';
+// import axios from 'axios';
+// import axios from 'axios';
+import RotaractFromik from '../../globals/components/rotaractfromik/RotaractFromik';
+// import md5 from 'md5';
 import LoginLayoutWrapper from './LoginLayoutWrapper';
+// import Cookies from 'js-cookie';
+import styles from './Login.module.less';
 
 const Login = () => {
-
   const history = useHistory();
 
   const SignupSchema = yup.object().shape({
@@ -19,9 +25,25 @@ const Login = () => {
     password: yup.string().min(6, 'Too Short!').required('Required'),
   });
 
+  const loginsubmit = (values) => {
+    // const reqObj = {
+    //   email: values.email,
+    //   password: md5(values.password),
+    // };
+
+    GlobalService.generalSelect((respdata) => {
+      const { estatus, emessage, data } = respdata;
+      console.log(respdata, 'respdata');
+      if (estatus === true && emessage === 'success' && data) {
+        history.push('/programmanager/home');
+      }
+      // }, resturls.login, reqObj, 'GET');
+    }, `${resturls.login}?Username=${values.email}&Password=${values.password}`, {}, 'GET');
+  };
+
   return (
     <LoginLayoutWrapper>
-      <div className='login'>
+      <div className={styles.login}>
         <h2>Login</h2>
         <RotaractFromik
           initialValues={{
@@ -29,7 +51,8 @@ const Login = () => {
             password: '',
           }}
           validationSchema={SignupSchema}
-        // onSubmit={loginsubmit}
+          // onSubmit={loginsubmit}
+          // onSubmit={loginsubmit}
         >
           {({
             errors,
@@ -64,8 +87,8 @@ const Login = () => {
               />
               <Link to="/forgetpassword" fontas="beta">Forgot Password?</Link>
               <div>
-                <Button type="submit" onClick={() => history.push("/home")}>Login</Button>
-                <Button type="submit" onClick={() => history.push("/signIn")}>Sign in</Button>
+                <Button type="submit" onClick={() => history.push('/programmanager/home')}>Login</Button>
+                <Button type="button" onClick={() => history.push('/signIn')}>Sign in</Button>
               </div>
             </Form>
           )}
@@ -73,6 +96,6 @@ const Login = () => {
       </div>
     </LoginLayoutWrapper>
   );
-}
+};
 
 export default withTranslation('common')(Login);

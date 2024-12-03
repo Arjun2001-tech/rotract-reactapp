@@ -1,0 +1,15 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.progress {
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--colour-neutral-10);
+
+  .bar {
+    height: 5px !important;
+    background-color: var(--colour-primary-green-base);
+    min-width: 0em;
+  }
+}

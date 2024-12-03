@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@background: @primaryColor;
+@itemBackground: @primaryColor;
+
+@border: 0px solid @primaryColor;
+@boxShadow: none;
+@itemTextColor: white;
+@dropdownItemFontSize: 20px;

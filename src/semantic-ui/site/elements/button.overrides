@@ -1,0 +1,69 @@
+/*******************************
+         Site Overrides
+*******************************/
+@import "~assets/less/config";
+
+.ui.button {
+  background-color: @primaryGreenBase !important;
+  font-size: var(--font-size-18);
+  color: @white !important;
+  padding: .438em 1.25em !important;
+  font-family: @fontName;
+  font-weight: normal;
+  border-radius: 5px !important;
+  min-width: 6em;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 30%) !important;
+  }
+
+  &:active {
+    background-color: @primaryGreen60 !important;
+  }
+
+  >i {
+    margin: 0 .5rem !important;
+  }
+}
+
+.ui.secondary.button {
+  background-color: @white !important;
+  color: @primaryGreenBase !important;
+}
+
+.ui.basic.buttons .button,
+.ui.basic.button,
+.ui.basic.primary.buttons .button,
+.ui.basic.primary.button {
+  background: none !important;
+  color: @primaryGreenBase !important;
+  border: 1px solid @primaryGreenBase !important;
+  box-shadow: none !important;
+
+  &:hover {
+    color: @primaryGreenBase !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 30%) !important;
+  }
+
+  &:focus:not(:hover) {
+    color: @primaryGreenBase !important;
+    box-shadow: none !important;
+  }
+}
+
+.ui.basic.secondary.buttons .button, .ui.basic.secondary.button {
+  background: none !important;
+  color: @secondaryBlueBase !important;
+  border: 1px solid @secondaryBlueBase !important;
+  box-shadow: none !important;
+
+  &:hover {
+    color: @secondaryBlueBase !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 30%) !important;
+  }
+
+  &:focus:not(:hover) {
+    color: @secondaryBlueBase !important;
+    box-shadow: none !important;
+  }
+}
